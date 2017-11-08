@@ -1,24 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NzX-6p-0pu">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Home View Controller-->
+        <scene sceneID="QVL-UQ-X0R">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController id="NzX-6p-0pu" customClass="HomeViewController" customModule="CarRepos" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="b4H-cg-ca5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="carImage.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="IB2-B3-e5v">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ifh-36-lSh">
+                                <rect key="frame" x="0.0" y="340" width="375" height="51.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Ifh-36-lSh" secondAttribute="height" multiplier="29:4" id="unc-cE-iqt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Fetch Cars"/>
+                                <connections>
+                                    <action selector="fetchCarsClicked:" destination="NzX-6p-0pu" eventType="touchUpInside" id="cRe-YA-MRM"/>
+                                    <segue destination="mqy-Vy-gNb" kind="show" identifier="segueMyVehicles" id="0I5-bs-orf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ifh-36-lSh" firstAttribute="leading" secondItem="IB2-B3-e5v" secondAttribute="leading" id="4Ly-oc-PpI"/>
+                            <constraint firstItem="IB2-B3-e5v" firstAttribute="top" secondItem="b4H-cg-ca5" secondAttribute="top" id="C7y-n0-3Bl"/>
+                            <constraint firstItem="Ifh-36-lSh" firstAttribute="trailing" secondItem="IB2-B3-e5v" secondAttribute="trailing" id="FDz-tJ-vtT"/>
+                            <constraint firstItem="IB2-B3-e5v" firstAttribute="leading" secondItem="jUD-yX-ew6" secondAttribute="leading" id="VEL-wm-7QH"/>
+                            <constraint firstItem="IB2-B3-e5v" firstAttribute="height" secondItem="b4H-cg-ca5" secondAttribute="height" multiplier="0.5" id="Ylx-L1-zq6"/>
+                            <constraint firstItem="IB2-B3-e5v" firstAttribute="trailing" secondItem="jUD-yX-ew6" secondAttribute="trailing" id="cgd-Rp-xvo"/>
+                            <constraint firstItem="Ifh-36-lSh" firstAttribute="top" secondItem="IB2-B3-e5v" secondAttribute="bottom" multiplier="1.02" id="lAH-My-u7L"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jUD-yX-ew6"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k2H-Hg-SAe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="140" y="119.1904047976012"/>
+        </scene>
+        <!--My Vehicle View Controller-->
+        <scene sceneID="00x-Ye-tv1">
+            <objects>
+                <viewController id="mqy-Vy-gNb" customClass="MyVehicleViewController" customModule="CarRepos" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yEW-th-HbJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVl-U1-j78">
+                                <rect key="frame" x="167" y="318.5" width="41" height="30"/>
+                                <state key="normal" title="Home"/>
+                                <connections>
+                                    <action selector="backToHome:" destination="mqy-Vy-gNb" eventType="touchUpInside" id="jQA-xA-u80"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dVl-U1-j78" firstAttribute="centerY" secondItem="yEW-th-HbJ" secondAttribute="centerY" id="CF4-8Q-Kh5"/>
+                            <constraint firstItem="dVl-U1-j78" firstAttribute="centerX" secondItem="yEW-th-HbJ" secondAttribute="centerX" id="ePa-Ov-hbN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tnV-WW-L9E"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tcZ-G8-tQK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="806" y="119"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="carImage.jpg" width="590" height="350"/>
+    </resources>
 </document>
